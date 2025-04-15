@@ -6,7 +6,7 @@ body {
     align-items: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('/Assets/loginpic.jpg');
+    background-image: url('../Assets/loginpic.jpg');
     overflow:hidden;
 }
 

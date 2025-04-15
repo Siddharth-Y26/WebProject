@@ -121,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
         "Haryana": "./States HTML/har.html",
         "Punjab": "./States HTML/pun.html",
         "Jammu & Kashmir": "./States HTML/jk.html",
+        "NCT of Delhi": "./States HTML/delhi.html",
         "New Delhi": "./States HTML/delhi.html",
         "Arunachal Pradesh": "./States HTML/arunachal.html",
         "Nagaland": "./States HTML/nagaland.html",
