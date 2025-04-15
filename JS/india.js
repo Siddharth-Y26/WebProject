@@ -94,11 +94,16 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     
     
-    // Resize with debounce
+    let lastWidth = window.innerWidth;
+
     window.addEventListener('resize', debounce(() => {
-        document.getElementById('map').innerHTML = '';
-        initializeMap();
+        if (window.innerWidth !== lastWidth) {
+            document.getElementById('map').innerHTML = '';
+            initializeMap();
+            lastWidth = window.innerWidth;
+        }
     }, 300));
+
 
     initializeMap();
 
