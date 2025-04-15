@@ -97,13 +97,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let lastWidth = window.innerWidth;
 
     window.addEventListener('resize', debounce(() => {
-        if (window.innerWidth !== lastWidth) {
+        const currentWidth = window.innerWidth;
+
+        if (Math.abs(currentWidth - lastWidth) > 100) {
+            lastWidth = currentWidth;
             document.getElementById('map').innerHTML = '';
             initializeMap();
-            lastWidth = window.innerWidth;
         }
-    }, 300));
-
+    }, 500));
 
     initializeMap();
 

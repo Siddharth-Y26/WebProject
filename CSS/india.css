@@ -247,6 +247,8 @@ video {
         z-index: 1100;
         background: rgba(18, 121, 129, 0.95);
         box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+        pointer-events: auto;
+        touch-action: manipulation;
     }
 
     .search-container input,
