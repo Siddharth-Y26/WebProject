@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image" href="./Assets/clogo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Escapade</title>
+    <link rel="stylesheet" href="./CSS/india.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.js"></script>
+    <script src="./JS/highlight.js"></script>
+    <script src="./JS/india.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <img src="./Assets/logo.png" alt="Logo" class="logo">
+        <div class="user">
+            <img class='usericon' src="./Assets/usericon.png"></img>
+            <p id="displayName" class="username"></p>
+        </div>
+    </header>
+
+    <section class="video-container">
+        <video id="bgVideo" autoplay muted loop playsinline preload="auto">
+            <source src="./Assets/background_video.mp4" type="video/mp4">
+        </video>
+        
+        <div class="overlay">
+            <h1>Discover India</h1>
+            <p>Embark on a journey through the land of diversity</p>
+        </div>
+    </section>
+
+    <div class="map-wrapper">
+        <div class="map-container" id="map">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search state..." autocomplete="off">
+                <button onclick="searchState()">Search</button>
+                <ul id="suggestions"></ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

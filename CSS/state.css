@@ -1,0 +1,248 @@
+* {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    box-sizing: "border-box";
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 0 24px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.header.scrolled {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.header.hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+.logo {
+    height: 110px;
+    margin-top: -5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    align-items: start; 
+    padding-top: 100px;
+    gap: 20px;
+}
+
+.photo {
+    width: 99%;
+    height: auto;
+    margin-left: 10px;
+    max-height: 585px;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+.content {
+    word-break: break-word;
+    background: white;
+    margin-right: 20px; 
+    margin-left: 10px;
+    text-align: left;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right:10px;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    color: #003366;
+    margin-top: 20px;
+    text-decoration: underline;
+}
+
+.subtitle {
+    font-size: 22px;
+    color: #666;
+    margin-top: 10px;
+    font-style:italic;
+}
+
+.info {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.attractions {
+    width: 95%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: rgb(4, 4, 61);
+    border-radius: 20px;
+    position: relative;
+}
+
+.attractions::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    border-radius: 10px;
+    padding: 5px;
+    background: 
+        linear-gradient(90deg, yellow 50%, transparent 50%), 
+        linear-gradient(90deg, yellow 50%, transparent 50%), 
+        linear-gradient(0deg, yellow 50%, transparent 50%), 
+        linear-gradient(0deg, yellow 50%, transparent 50%);
+    background-repeat: repeat-x, repeat-x, repeat-y, repeat-y;
+    background-size: 30px 8px, 30px 8px, 8px 30px, 8px 30px;
+    background-position: 0px 0px, 100% 100%, 0px 100%, 100% 0px;
+    animation: runningborder 10s linear infinite;
+    z-index: 1; 
+}
+
+@keyframes runningborder {
+    0% {
+        background-position: 0px 0px, 100% 100%, 0px 100%, 100% 0px;
+    }
+    100% {
+        background-position: 100% 0px, 0px 100%, 0px 0px, 100% 100%;
+    }
+}
+
+.attraction-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 500px;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.attraction-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.attraction-content {
+    padding: 15px;
+}
+
+.attraction-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #003366;
+}
+
+.attraction-text {
+    font-size: 16px;
+    color: #555;
+    margin-top: 10px;
+}
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .photo {
+        width: 100%;
+        margin: auto auto;
+        height: auto; 
+    }
+
+    .content {
+        padding-top: 20px;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: justify;
+    }
+
+    .title {
+        font-size: 36px;
+    }
+
+    .subtitle {
+        font-size: 18px;
+    }
+
+    .info {
+        font-size: 16px;
+    }
+
+    .attractions {
+        width:85%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .attraction-card {
+        width: 95%;
+        max-width: 500px;
+    }
+}
+
+.weather-info {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    align-items: baseline;
+}
+
+.weather-info img {
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.back-button-container {
+    padding: 1rem;
+    text-align: left;
+}
+  
+.back-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.back-button:hover {
+    background-color: #0056b3;
+}
+  
