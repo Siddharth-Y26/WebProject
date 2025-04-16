@@ -18,6 +18,30 @@
     </form>
     <button class="link" id="toggleForm">Create New<br>Account</button>
   </div>
+<!-- Firebase App (the core Firebase SDK) - compat version -->
+<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+<!-- Firebase Authentication - compat version -->
+<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-auth-compat.js"></script>
+<!-- Firebase Firestore - compat version (if needed) -->
+<script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDiehZHyHpOpaZKbBqiE3YpLQeA1i3M0EE",
+      authDomain: "web-project-bcabe.firebaseapp.com",
+      projectId: "web-project-bcabe",
+      storageBucket: "web-project-bcabe.firebasestorage.app",
+      messagingSenderId: "705504449001",
+      appId: "1:705504449001:web:5003d6b01381a1c5cabb78",
+      measurementId: "G-30T6Z6GE3G"
+    };
+    firebase.initializeApp(firebaseConfig);
+  
+    // Initialize Authentication using compat, so it’s available globally
+    const auth = firebase.auth();
+    
+    // Optional: initialize Firestore if needed
+    const db = firebase.firestore();
+  </script>
   <script src="./JS/login.js"></script>
 </body>
 </html>

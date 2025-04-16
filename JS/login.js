@@ -21,37 +21,37 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   }
 });
 
-// Create account logic
+// Create account logic with Firebase Authentication
 function createAccount(username, password) {
-  if (username.toLowerCase() === "admin") {
-    alert("Cannot create an admin account.");
-    return;
-  }
+  const email = username.includes('@') ? username : `${username}@example.com`;
 
-  if (localStorage.getItem(`user_${username}`)) {
-    alert("Username already exists!");
-  } else {
-    localStorage.setItem(`user_${username}`, password);
-    alert("Account created successfully. You can now log in.");
-    document.getElementById("toggleForm").click(); // switch to login mode
-  }
+  auth.createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      db.collection("users").doc(userCredential.user.uid).set({
+        username: username,
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+      alert("Account created successfully. Please log in.");
+      document.getElementById("toggleForm").click();
+    })
+    .catch((error) => {
+      alert("Error: " + error.message);
+    });
 }
-
 // Login logic
 function login(username, password) {
-  // Check for admin login
+  const email = username.includes('@') ? username : `${username}@example.com`;
   if (username === "admin" && password === "admin123") {
     localStorage.setItem("loggedInUser", username);
     window.location.href = "india.html";
     return;
   }
-
-  // Check if user exists in localStorage
-  const storedPassword = localStorage.getItem(`user_${username}`);
-  if (storedPassword && storedPassword === password) {
-    localStorage.setItem("loggedInUser", username);
-    window.location.href = "india.html";
-  } else {
-    alert("Invalid username or password.");
-  }
+  auth.signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      localStorage.setItem("loggedInUser", username);
+      window.location.href = "india.html";
+    })
+    .catch((error) => {
+      alert("Error: " + error.message);
+    });
 }
