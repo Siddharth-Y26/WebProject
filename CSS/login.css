@@ -70,9 +70,9 @@ input:hover {
         background-position-x: center;
     }
     .login-box {
-        width: 200px;
-        max-width: 250px;
-        padding: 45px;
+        width: 70vw;
+        max-width: 200px;
+        padding: 20px;
         font-size: large;
     }
     input, button {
