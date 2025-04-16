@@ -36,6 +36,7 @@ input {
 
 button {
     padding: 10px 20px;
+    margin: auto auto;
     margin-top: 10px;
     font-size: 1rem;
     background-color: rgb(194, 213, 21);
@@ -52,6 +53,7 @@ button:hover {
 @media (max-width: 768px) {
     .login-box {
         min-width: 30vw;
+        max-width: 30vw;
         padding: 40px;
         font-size: large;
     }
