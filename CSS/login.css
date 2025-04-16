@@ -6,59 +6,79 @@ body {
     align-items: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../Assets/loginpic.jpg');
+    background-image: url('https://images.unsplash.com/photo-1682437180059-97bf6f293d85?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwbGFuZHNjYXBlfGVufDB8fDB8fHww');
     overflow:hidden;
 }
 
 .login-box {
-    background: rgba(117, 168, 213, 0.658);
-    color: white;
+    background-image: url('https://i.pinimg.com/1200x/00/56/1a/00561a1c82b2d112fd87c75404ba241b.jpg');
+    color:yellow;
     padding: 30px;
     border: none;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.7);
     text-align: center;
-    font-size: x-large;
     font-style: italic;
 }
 
-
 input {
+    background-color: #212121;
+    color:gold;
     display: block;
-    width: 90%;
+    width: 92%;
     margin-top: 10px;
     padding: 10px;
     font-size: 1rem;
     border:none;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    transition: all 0.5s ease;
+}
+
+input::placeholder {
+    color: #e8c7c7;
 }
 
 button {
     padding: 10px 20px;
     margin: auto auto;
     margin-top: 10px;
+    width: 70%;
     font-size: 1rem;
-    background-color: rgb(194, 213, 21);
-    color: rgb(0, 0, 0);
+    font-weight: bold;
+    background-color: #FFEB3B ;
+    color: black;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 
 button:hover {
-    background-color: yellow;
+    filter: brightness(120%);
+    background-color: orange;
+    transform: scale(1.09);
+}
+
+input:hover {
+    filter: brightness(120%);
+    transform: scale(1.09);
 }
 
 @media (max-width: 768px) {
+    body{
+        background-position-x: center;
+    }
     .login-box {
         min-width: 30vw;
-        max-width: 30vw;
-        padding: 40px;
+        max-width: 35vw;
+        padding: 20px;
         font-size: large;
     }
     input, button {
         width: 90%;
         font-size: 1rem;
+        margin: auto auto;
+        margin-top: 10px;
     }
 }
