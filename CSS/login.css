@@ -1,7 +1,7 @@
 body {
+    height: 100vh;
     font-family: 'Times New Roman';
     display: flex;
-    height: 98vh;
     justify-content: center;
     align-items: center;
     background-size: cover;
@@ -51,8 +51,8 @@ button:hover {
 
 @media (max-width: 768px) {
     .login-box {
-        min-height: auto;
-        min-width: 300px;
+        min-width: 45vw;
+        padding: 50px 20px;
         padding: 40px;
         font-size: large;
     }

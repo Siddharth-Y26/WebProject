@@ -27,7 +27,7 @@ function displayWeatherAPI(data, weatherInfo) {
   const { temp_c, condition } = data.current;
   weatherInfo.innerHTML = `
     🌡️ ${temp_c}°C <br>
-    <img src="https:${condition.icon}" alt="icon" style="width: 40px; height: 40px; margin-bottom:-15px; object-fit: contain;"> ${condition.text}
+    <img src="https:${condition.icon}" alt="icon" style="width: 40px; height: 40px; margin-bottom:-12px; object-fit: contain;">${condition.text}
   `;
 }
 
@@ -37,7 +37,7 @@ function displayWeatherOWM(data, weatherInfo) {
   const iconCode = data.weather[0].icon;
   weatherInfo.innerHTML = `
     🌡️ ${temp}°C <br>
-    <img src="http://openweathermap.org/img/wn/${iconCode}@2x.png" alt="icon" style="width: 40px; height: 40px; margin-bottom:-15px; object-fit: contain;"> ${description} <br>
+    <img src="http://openweathermap.org/img/wn/${iconCode}@2x.png" alt="icon" style="width: 40px; height: 40px; margin-bottom:-12px; object-fit: contain;">${description}
   `;
 }
 
