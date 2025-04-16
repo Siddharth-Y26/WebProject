@@ -10,12 +10,12 @@ body {
 
 .user {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-start;
     position: absolute;
-    top: 10px;
+    top: 5px;
     right: 10px;
-    gap: 10px;
 }
 
 .usericon {
@@ -27,6 +27,7 @@ body {
     font-size: 14px;
     font-weight: bold;
     color: #333;
+    margin-bottom: 0px;
 }
 
 .header {
@@ -308,3 +309,24 @@ video {
     }
 }
     
+.back-button-container {
+    margin-top: 0px;
+    text-align: left;
+}
+
+.back-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    margin-top: 2px;
+    padding: 0.3rem 0.6rem;
+    font-size: 0.4rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
+}
+

@@ -20,6 +20,13 @@ document.addEventListener("DOMContentLoaded", function () {
         lastScroll = currentScroll;
     });
 
+    const logoutButton = document.getElementById("logoutBtn");
+    if (logoutButton) {
+        logoutButton.addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+    }
+
     // Debounce utility
     function debounce(func, delay) {
         let timer;
@@ -141,10 +148,10 @@ document.addEventListener("DOMContentLoaded", function () {
         "Tamil Nadu": "./States HTML/tamil.html",
         "Kerala": "./States HTML/kerala.html",
         "Andaman & Nicobar Island": "./States HTML/and.html"
-    };
+    };  
 
     const searchInput = document.getElementById("searchInput");
-    const searchButton = document.querySelector("button");
+    const searchButton = document.querySelector(".search-container button");
     const suggestionsList = document.getElementById("suggestions");
 
     searchInput.addEventListener("input", function () {
