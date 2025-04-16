@@ -71,8 +71,8 @@ input:hover {
     }
     .login-box {
         width: 90vw;
-        max-width: 250px;
-        padding: 30px;
+        max-width: 220px;
+        padding: 20px;
         font-size: large;
     }
     input, button {
