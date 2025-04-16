@@ -51,8 +51,7 @@ button:hover {
 
 @media (max-width: 768px) {
     .login-box {
-        min-width: 45vw;
-        padding: 50px 20px;
+        min-width: 30vw;
         padding: 40px;
         font-size: large;
     }
