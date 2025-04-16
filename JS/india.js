@@ -42,10 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const searchContainerWidth = searchContainer ? searchContainer.offsetWidth : 0;
         const width = mapContainer.offsetWidth;
         const isMobile = window.innerWidth < 768;
-        const height = isMobile ? 500 : 700; // Adjusted height
+        const height = isMobile ? 500 : 700; 
         
-        const center = [82.8, 22.5]; // India's center
-        const scale = isMobile ? 670 : 1200; // Adjusted scale for better fit
+        const center = [82.8, 22.5]; 
+        const scale = isMobile ? 670 : 1200; 
         
         const datamapInstance = new Datamap({
             scope: 'india',

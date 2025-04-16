@@ -1,6 +1,5 @@
 let isCreating = false;
 
-// Toggle between login and register form
 document.getElementById("toggleForm").addEventListener("click", function () {
   isCreating = !isCreating;
   document.getElementById("formTitle").textContent = isCreating ? "Create Account" : "Login";
@@ -8,7 +7,6 @@ document.getElementById("toggleForm").addEventListener("click", function () {
   this.textContent = isCreating ? "Back to login" : "Create new account";
 });
 
-// Handle form submit
 document.getElementById("loginForm").addEventListener("submit", function (e) {
   e.preventDefault();
   const username = document.getElementById("username").value.trim();
@@ -21,7 +19,6 @@ document.getElementById("loginForm").addEventListener("submit", function (e) {
   }
 });
 
-// Create account logic with Firebase Authentication
 function createAccount(username, password) {
   const email = username.includes('@') ? username : `${username}@example.com`;
 

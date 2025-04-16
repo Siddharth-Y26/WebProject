@@ -47,22 +47,19 @@ function fetchCombinedWeather(locationName, card) {
   weatherInfo.innerText = "Weather: Loading...";
   card.querySelector(".attraction-content").appendChild(weatherInfo);
 
-  // First, use getCoordinates to obtain an accurate lat/lon for the location.
   getCoordinates(locationName)
     .then(coords => {
-      // Use the coordinates for the query if available.
       const queryParam = coords ? `${coords.lat},${coords.lon}` : encodeURIComponent(locationName);
 
-      // Try WeatherAPI using the coordinate query (q can be "lat,lon")
       fetch(`https://api.weatherapi.com/v1/current.json?key=${weatherAPIKey}&q=${queryParam}&aqi=no`)
         .then(res => res.json())
         .then(data => {
-          // If WeatherAPI returns valid data, display it.
+          
           if (!data.error) {
             displayWeatherAPI(data, weatherInfo);
           } else {
             console.warn("WeatherAPI failed for " + locationName + ", falling back to OpenWeatherMap");
-            // If WeatherAPI fails, use OpenWeatherMap via coordinates (if available).
+            
             if (coords) {
               fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${coords.lat}&lon=${coords.lon}&appid=${openWeatherKey}&units=metric`)
                 .then(res => res.json())
@@ -94,7 +91,7 @@ function fetchCombinedWeather(locationName, card) {
 }
 
 
-// ----- Transport Functions -----
+
 async function getCoordinates(place) {
   const res = await fetch(`https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(place)}&format=json&limit=1`);
   const data = await res.json();
@@ -107,8 +104,6 @@ async function getCoordinates(place) {
   }
   return null;
 }
-
-// Returns candidate transport details for each category (distance, name, coordinates)
 async function getNearbyTransport(lat, lon) {
   const query = `
     [out:json];
@@ -174,8 +169,6 @@ async function getNearbyTransport(lat, lon) {
   }
   return results;
 }
-
-// Haversine formula to calculate the distance (in km) between two coordinates
 function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
   const R = 6371;
   const dLat = (lat2 - lat1) * Math.PI / 180;
@@ -187,26 +180,18 @@ function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
   return R * c;
 }
 
-// Updated createRouteButton that returns an anchor element styled like a button within a container.
-// Helper to create a button linking to Google Maps Directions.
-// This function returns a DOM element (a container with a text span and a button element)
 function createRouteButton(origin, candidate) {
-  // Build the Google Maps Directions URL.
   const url = `https://www.google.com/maps/dir/?api=1&origin=${origin.lat},${origin.lon}&destination=${candidate.lat},${candidate.lon}&travelmode=driving`;
 
-  // Create a container for the candidate's info and the button.
   const container = document.createElement("div");
 
-  // Create and append a text element to show candidate name and distance.
   const textEl = document.createElement("span");
   textEl.textContent = `${candidate.name} - ${candidate.dist} km `;
   container.appendChild(textEl);
 
-  // Create the button element.
   const btn = document.createElement("button");
   btn.textContent = "Get Directions";
   btn.className = "transport-button";
-  // Add a click event listener that opens the URL.
   btn.addEventListener("click", () => {
     window.open(url, '_blank');
   });
@@ -230,10 +215,9 @@ async function showNearbyTransportForCard(card, title) {
 
   const nearby = await getNearbyTransport(attractionCoords.lat, attractionCoords.lon);
 
-  // Clear previous content to build output using DOM elements.
   distanceInfo.innerHTML = "";
   
-  // Create container for Airport output.
+  //Airport output.
   const airportDiv = document.createElement("div");
   airportDiv.className = "transport-output";
   const airportLabel = document.createElement("span");
@@ -250,7 +234,7 @@ async function showNearbyTransportForCard(card, title) {
   }
   distanceInfo.appendChild(airportDiv);
 
-  // Create container for Railway output.
+  //Railway output.
   const railwayDiv = document.createElement("div");
   railwayDiv.className = "transport-output";
   const railwayLabel = document.createElement("span");
@@ -267,7 +251,7 @@ async function showNearbyTransportForCard(card, title) {
   }
   distanceInfo.appendChild(railwayDiv);
 
-  // Create container for Bus output.
+  //Bus output.
   const busDiv = document.createElement("div");
   busDiv.className = "transport-output";
   const busLabel = document.createElement("span");
@@ -284,8 +268,6 @@ async function showNearbyTransportForCard(card, title) {
   }
   distanceInfo.appendChild(busDiv);
 }
-
-// ----- On Window Load, Process Each Attraction Card -----
 window.onload = () => {
   const cards = document.querySelectorAll(".attraction-card");
   cards.forEach((card, index) => {
