@@ -242,7 +242,8 @@ video {
         top: 10px;
         left: 50%;
         transform: translateX(-50%);
-        grid-template-columns: 1fr;
+        grid-template-columns: 80% 20%;
+        gap:5px;
         width: 90%;
         z-index: 1100;
         background: rgba(18, 121, 129, 0.95);
@@ -253,13 +254,13 @@ video {
 
     .search-container input,
     .search-container button {
-        font-size: 1.2rem;
-        margin: 10px auto;
-        width: 100%;
+        font-size: 1rem;
+        margin: 5px auto;
+        width: 90%;
     }
 
     .search-container button {
-        margin-top: 10px;
+        margin-top: 5px;
     }
 
     .video-container {
