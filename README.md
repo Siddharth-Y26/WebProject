@@ -1,55 +1,98 @@
-# WebProject Report
+# 🌆 Urban Escapade
 
-## 1. Introduction
+**Urban Escapade** is a static, educational website designed to showcase the rich diversity of Indian states through an engaging and interactive experience.
 
-The **WebProject** repository is a static website designed to educate users about various Indian states. It uses **HTML**, **CSS**, and **JavaScript** to structure content, apply styling, and implement basic interactivity. This project showcases geographical, cultural, and regional information about different states of India in a well-organized format. It appears to be a student project or portfolio piece aimed at practicing frontend web development skills.
-
----
-
-## 2. Technology Used
-
-The WebProject uses the following web technologies:
-
-- **HTML5**: To create the structure and content of each webpage.  
-- **CSS3**: For designing and styling the website including layout, fonts, and colors.  
-- **JavaScript**: To provide interactivity and dynamic behavior like image sliders and event responses.
+🔗 **Live Website**: [Urban Escapade](https://siddharth-y26.github.io/Urban-Escapade/)
 
 ---
 
-## 3. Workflow with Explanation
+## 📌 Overview
 
-The project workflow is divided into multiple key components:
+Urban Escapade is an interactive digital platform that explores Indian states through:
 
-- `index.html`: Serves as the homepage, offering navigation options.  
-- `india.html`: Provides a national-level overview with buttons or links to state-specific pages.  
-- `States HTML` folder: Contains individual HTML files for each state (e.g., `Karnataka.html`, `Kerala.html`).  
-- `CSS` folder: Holds separate stylesheet files to maintain design consistency across pages.  
-- `JS` folder: Includes JavaScript files managing interactions such as popups or sliders.  
-- `Assets` folder: Stores media and icons used to enhance the visual appeal of the website.
+- 🏛️ Cultural heritage highlights  
+- 🗺️ Geographical features  
+- 📍 State-specific insights  
 
----
-
-## 4. Sample Screenshots
-
-*Since this is a code-based review, below are descriptive examples of key pages:*
-
-- **Homepage**: A visually welcoming page with title, image banner, and navigation bar.  
-- **India Overview Page**: Contains national symbols, general info, and links to individual states.  
-- **State Page Example** (`Kerala.html`): Presents a short description, notable facts, and a gallery section.
-
+Users can start from a centralized homepage and navigate to individual state pages via an interactive map. The map allows hovering and clicking on states like **Uttar Pradesh**, which highlights the state and displays tooltips with links to detailed pages.
 
 ---
 
-## 5. Conclusion
+## 🧰 Technologies Used
 
-This project effectively demonstrates foundational concepts of web development by integrating HTML, CSS, and JavaScript into a cohesive experience.  
+### 🌐 HTML
+- Structures pages (e.g., `Karnataka.html`, `TamilNadu.html`)
+- Semantic elements like `<header>`, `<nav>`, `<section>`, `<footer>`
+- Integrated links, tooltips, and map elements
 
-**Future Improvements:**
-- Implement responsive design for mobile compatibility.  
-- Add accessibility features for inclusive design.  
-- Incorporate more interactive elements.  
-- Deploy using GitHub Pages or Netlify for greater accessibility and visibility.
+### 🎨 CSS
+- Styling and layout management
+- Responsive design for various devices
+- Interactive map effects and visual hierarchy
+
+### ⚙️ JavaScript
+- Interactive map functionality (hover, click, tooltip)
+- State-based redirection
+- Dynamic search functionality
+- Real-time **Weather API** data display
+- **Overpass API** for nearby transport data
+- Sliders, popups, and dynamic UI behavior
+
+### 🔐 Firebase
+- User authentication (login & sign-up)
+- Secure credential storage
+- Session persistence
+- Backendless scalability
 
 ---
 
-*End of Report*
+## 🔄 Workflow
+
+### 1️⃣ Login Page (`index.html`)
+**Purpose:** Entry point to the website, ensures authenticated access  
+**Features:**
+- Form inputs for username and password  
+- Toggle to switch between login and account creation  
+- Logic handled in `login.js` for:
+  - Input validation  
+  - Firebase authentication  
+  - Redirect to `india.html` on success  
+
+### 2️⃣ India Overview Page (`india.html`)
+**Purpose:** Central dashboard after login  
+**Features:**
+- Video background with overlay text  
+- Search bar for manual state lookup  
+- Interactive map with clickable states  
+- JavaScript libraries: `d3.js`, `jquery.js`  
+
+### 3️⃣ State Pages (e.g., `TamilNadu.html`)
+**Purpose:** Display information about individual Indian states  
+**Features:**
+- State-specific title and banner  
+- Cultural, geographical, and tourism content  
+- Cards with attractions and images  
+- Real-time weather via **Weather API**  
+- Nearby transport options via **Overpass API**  
+- "Back to India" button for navigation  
+
+---
+
+## 📱 Mobile Compatibility
+
+Urban Escapade is mobile-responsive and designed to adapt across various screen sizes, ensuring accessibility on both desktop and mobile devices.
+
+---
+
+## ✅ Conclusion
+
+Urban Escapade successfully integrates **HTML**, **CSS**, **JavaScript**, and **Firebase** to create an immersive and informative platform for exploring the states of India. Key highlights include:
+
+- Secure user login and account creation  
+- Interactive and intuitive map-based navigation  
+- Real-time weather and transport data integration  
+- Consistent, modular, and responsive design  
+
+The project demonstrates how modern frontend technologies can be combined with cloud services to build scalable and educational web applications.
+
+---
