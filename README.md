@@ -96,3 +96,11 @@ Urban Escapade successfully integrates **HTML**, **CSS**, **JavaScript**, and **
 The project demonstrates how modern frontend technologies can be combined with cloud services to build scalable and educational web applications.
 
 ---
+
+## 👥 Authors
+
+- [Siddharth Yadav](https://github.com/Siddharth-Y26)
+- [Ayush Shukla](https://github.com/Ayushs135)
+- [Sujal Chhajed](https://github.com/Dragonballsuper-1995)
+
+---
